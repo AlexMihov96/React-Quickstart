@@ -1,19 +1,47 @@
-import React, {Component} from 'react';
-// import {Button} from 'reactstrap'
+import React, { Component } from 'react';
+import { Route, Switch, withRouter } from 'react-router-dom';
+import Header from './components/shared/Header';
+import Register from './components/auth/Register';
+import Login from './components/auth/Login';
+import Home from './components/Home';
+import { connect } from 'react-redux';
+import { logoutAction } from './core/store/actions/authActions';
 
 class App extends Component {
+    constructor(props) {
+        super(props);
+
+        this.onLogout = this.onLogout.bind(this);
+    }
+
+    onLogout() {
+        this.props.logout();
+        this.props.history.push('/');
+    }
+
     render() {
         return (
             <div className="App">
-                <header className="App-header">
-                    <h1 className="App-title">Welcome to React</h1>
-                </header>
-                <p className="App-intro">
-                    Your startup is working perfectly
-                </p>
+                <Header loggedIn={localStorage.getItem('authToken') != null} onLogout={this.onLogout} />
+                <Switch>
+                    <Route exact path="/" component={Home} />
+                    <Route path="/login" component={Login} />
+                    <Route path="/register" component={Register} />
+                </Switch>
             </div>
         );
     }
 }
 
-export default App;
+function mapState(state) {
+    return {};
+}
+
+function mapDispatch(dispatch) {
+    return {
+        logout: () => dispatch(logoutAction())
+    };
+}
+
+
+export default withRouter(connect(mapState, mapDispatch)(App));
