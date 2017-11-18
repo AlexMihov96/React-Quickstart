@@ -32,3 +32,13 @@ body {
     color: #6f6f6f;
     font-family: "Yu Gothic UI Semibold";
 }
+
+.footer {
+    background: #007BFF;
+    padding: 8px;
+    color: #ffffff;
+    text-align: center;
+    bottom: 0px;
+    position: fixed;
+    width: 100%;
+}

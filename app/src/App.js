@@ -6,6 +6,8 @@ import Login from './components/auth/Login'
 import Home from './components/Home'
 import { connect } from 'react-redux'
 import { logoutAction } from './core/store/actions/authActions'
+import Footer from "./components/shared/Footer"
+import NothingFound from "./components/shared/NothingFound"
 
 class App extends Component {
     constructor(props) {
@@ -28,10 +30,10 @@ class App extends Component {
                         <Route exact path="/" component={Home}/>
                         <Route path="/login" component={Login}/>
                         <Route path="/register" component={Register}/>
-                        {/*<Route component={NotFound} />*/}
+                        <Route component={NothingFound} />
                     </Switch>
                 </div>
-                {/*The place to import our Footer*/}
+                <Footer/>
             </div>
         )
     }
