@@ -9,7 +9,9 @@ export default class Header extends Component {
             <div className="container-fluid">
                 <ul className="nav navbar-inverse bg-primary">
                     <li className="nav-item">
-                        <NavLink exact to="/" className="nav-link" activeClassName="active">Home</NavLink>
+                        <NavLink exact to="/" className="navbar-brand nav-link" activeClassName="active">
+                            Home
+                        </NavLink>
                     </li>
 
                     {!loggedIn &&
