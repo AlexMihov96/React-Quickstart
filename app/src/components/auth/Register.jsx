@@ -24,6 +24,7 @@ class Register extends Component {
 
     onSubmitHandler(e) {
         e.preventDefault()
+
         this.props.register(this.state.name, this.state.email, this.state.password)
     }
 
@@ -36,36 +37,56 @@ class Register extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>Register</h1>
+            <div>
+                <div className="col-sm-12">
+                    <div className="text-center">
+                        <h1 className="text-format-large">Register</h1>
+                    </div>
+                </div>
+
                 <form onSubmit={this.onSubmitHandler}>
-                    <Input
-                        name="name"
-                        value={this.state.name}
-                        onChange={this.onChangeHandler}
-                        label="Name"
-                    />
-                    <Input
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.onChangeHandler}
-                        label="E-mail"
-                    />
-                    <Input
-                        name="password"
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.onChangeHandler}
-                        label="Password"
-                    />
-                    <Input
-                        name="repeat"
-                        type="password"
-                        value={this.state.repeat}
-                        onChange={this.onChangeHandler}
-                        label="Repeat password"
-                    />
-                    <input type="submit" value="Register"/>
+                    <div className="form-group">
+                        <Input
+                            name="name"
+                            value={this.state.name}
+                            onChange={this.onChangeHandler}
+                            label="Name"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <Input
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.onChangeHandler}
+                            label="E-mail"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <Input
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.onChangeHandler}
+                            label="Password"
+                        />
+                    </div>
+                    <div className="form-group">
+                        <Input
+                            name="repeat"
+                            type="password"
+                            value={this.state.repeat}
+                            onChange={this.onChangeHandler}
+                            label="Repeat password"
+                        />
+                    </div>
+
+                    <div className="form-group">
+                        <div className="row">
+                            <div className="col-sm-4 offset-4">
+                                <input className="btn btn-block btn-primary" type="submit" value="Register"/>
+                            </div>
+                        </div>
+                    </div>
                 </form>
             </div>
         )
