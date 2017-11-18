@@ -6,13 +6,13 @@ export default class Input extends Component {
 
         return (
             <div>
-                <label htmlFor="new-email">{label}</label>
-                <input
-                    onChange={onChange}
-                    name={name}
-                    id={name}
-                    type={type}
-                    value={value}/>
+                <label className="text-format" htmlFor="new-email">{label}</label>
+                <input className="form-control"
+                       onChange={onChange}
+                       name={name}
+                       id={name}
+                       type={type}
+                       value={value}/>
             </div>
         )
     }

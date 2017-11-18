@@ -1,7 +1,7 @@
-import React, { Component } from 'react'
+import React, {Component} from 'react'
 import Input from '../shared/Input'
-import { connect } from 'react-redux'
-import { loginAction, redirect } from '../../core/store/actions/authActions'
+import {connect} from 'react-redux'
+import {loginAction, redirect} from '../../core/store/actions/authActions'
 
 class Login extends Component {
     constructor(props) {
@@ -17,7 +17,7 @@ class Login extends Component {
     }
 
     onChangeHandler(e) {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({[e.target.name]: e.target.value})
     }
 
     onSubmitHandler(e) {
@@ -34,23 +34,39 @@ class Login extends Component {
 
     render() {
         return (
-            <div className="container">
-                <h1>Login</h1>
+            <div>
+                <div className="col-sm-12">
+                    <div className="text-center">
+                        <h1 className="text-format-large">Login</h1>
+                    </div>
+                </div>
+
                 <form onSubmit={this.onSubmitHandler}>
-                    <Input
-                        name="email"
-                        value={this.state.email}
-                        onChange={this.onChangeHandler}
-                        label="E-mail"
-                    />
-                    <Input
-                        name="password"
-                        type="password"
-                        value={this.state.password}
-                        onChange={this.onChangeHandler}
-                        label="Password"
-                    />
-                    <input type="submit" value="Login" />
+                    <div className="form-group">
+                        <Input
+                            name="email"
+                            value={this.state.email}
+                            onChange={this.onChangeHandler}
+                            label="E-mail"/>
+                    </div>
+
+                    <div className="form-group">
+                        <Input
+                            name="password"
+                            type="password"
+                            value={this.state.password}
+                            onChange={this.onChangeHandler}
+                            label="Password"/>
+                    </div>
+
+                    <div className="form-group">
+                        <div className="row">
+                            <div className="col-sm-4 offset-4">
+                                <input className="btn btn-block btn-primary" type="submit" value="Login"/>
+                            </div>
+                        </div>
+
+                    </div>
                 </form>
             </div>
         )

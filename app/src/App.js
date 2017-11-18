@@ -1,11 +1,11 @@
-import React, { Component } from 'react';
-import { Route, Switch, withRouter } from 'react-router-dom';
+import React, {Component} from 'react';
+import {Route, Switch, withRouter} from 'react-router-dom';
 import Header from './components/shared/Header';
 import Register from './components/auth/Register';
 import Login from './components/auth/Login';
 import Home from './components/Home';
-import { connect } from 'react-redux';
-import { logoutAction } from './core/store/actions/authActions';
+import {connect} from 'react-redux';
+import {logoutAction} from './core/store/actions/authActions';
 
 class App extends Component {
     constructor(props) {
@@ -22,13 +22,15 @@ class App extends Component {
     render() {
         return (
             <div className="App">
-                <Header loggedIn={localStorage.getItem('authToken') != null} onLogout={this.onLogout} />
-                <Switch>
-                    <Route exact path="/" component={Home} />
-                    <Route path="/login" component={Login} />
-                    <Route path="/register" component={Register} />
-                    {/*<Route component={NotFound} />*/}
-                </Switch>
+                <Header loggedIn={localStorage.getItem('authToken') != null} onLogout={this.onLogout}/>
+                <div className="container">
+                    <Switch>
+                        <Route exact path="/" component={Home}/>
+                        <Route path="/login" component={Login}/>
+                        <Route path="/register" component={Register}/>
+                        {/*<Route component={NotFound} />*/}
+                    </Switch>
+                </div>
                 {/*The place to import our Footer*/}
             </div>
         )
