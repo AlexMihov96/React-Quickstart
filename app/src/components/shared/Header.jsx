@@ -1,5 +1,5 @@
-import React, {Component} from 'react'
-import {NavLink} from 'react-router-dom'
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
@@ -14,22 +14,19 @@ export default class Header extends Component {
                         </NavLink>
                     </li>
 
-                    {!loggedIn &&
-                    <li className="nav-item">
+                    {!loggedIn && <li className="nav-item">
                         <NavLink className="nav-link" to="/login" activeClassName="active">
                             Login
                         </NavLink>
                     </li>}
 
-                    {!loggedIn &&
-                    <li className="nav-item">
+                    {!loggedIn && <li className="nav-item">
                         <NavLink className="nav-link" to="/register" activeClassName="active">
                             Register
                         </NavLink>
                     </li>}
 
-                    {loggedIn &&
-                    <li className="nav-item">
+                    {loggedIn && <li className="nav-item">
                         <a href="javascript:void(0)" className="nav-link" onClick={onLogout}>
                             Logout
                         </a>

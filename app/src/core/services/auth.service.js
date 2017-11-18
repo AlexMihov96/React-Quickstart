@@ -31,4 +31,4 @@ async function login(email, password) {
     return await response.json()
 }
 
-export {register, login}
+export { register, login }

@@ -19,7 +19,7 @@ class Register extends Component {
     }
 
     onChangeHandler(e) {
-        this.setState({ [e.target.name]: e.target.value })
+        this.setState({[e.target.name]: e.target.value})
     }
 
     onSubmitHandler(e) {
@@ -65,7 +65,7 @@ class Register extends Component {
                         onChange={this.onChangeHandler}
                         label="Repeat password"
                     />
-                    <input type="submit" value="Register" />
+                    <input type="submit" value="Register"/>
                 </form>
             </div>
         )

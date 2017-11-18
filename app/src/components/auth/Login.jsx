@@ -1,7 +1,7 @@
-import React, {Component} from 'react'
+import React, { Component } from 'react'
 import Input from '../shared/Input'
-import {connect} from 'react-redux'
-import {loginAction, redirect} from '../../core/store/actions/authActions'
+import { connect } from 'react-redux'
+import { loginAction, redirect } from '../../core/store/actions/authActions'
 
 class Login extends Component {
     constructor(props) {

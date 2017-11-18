@@ -1,11 +1,11 @@
-import React, {Component} from 'react';
-import {Route, Switch, withRouter} from 'react-router-dom';
-import Header from './components/shared/Header';
-import Register from './components/auth/Register';
-import Login from './components/auth/Login';
-import Home from './components/Home';
-import {connect} from 'react-redux';
-import {logoutAction} from './core/store/actions/authActions';
+import React, { Component } from 'react'
+import { Route, Switch, withRouter } from 'react-router-dom'
+import Header from './components/shared/Header'
+import Register from './components/auth/Register'
+import Login from './components/auth/Login'
+import Home from './components/Home'
+import { connect } from 'react-redux'
+import { logoutAction } from './core/store/actions/authActions'
 
 class App extends Component {
     constructor(props) {

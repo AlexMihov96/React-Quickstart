@@ -1,4 +1,4 @@
-import {REGISTER_SUCCESS, LOGIN_SUCCESS, REDIRECTED} from '../actions/authActionTypes'
+import { REGISTER_SUCCESS, LOGIN_SUCCESS, REDIRECTED } from '../actions/authActionTypes'
 
 export function registerReducer(state = {success: false}, action) {
     switch (action.type) {
