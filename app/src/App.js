@@ -9,14 +9,14 @@ import { logoutAction } from './core/store/actions/authActions';
 
 class App extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
-        this.onLogout = this.onLogout.bind(this);
+        this.onLogout = this.onLogout.bind(this)
     }
 
     onLogout() {
-        this.props.logout();
-        this.props.history.push('/');
+        this.props.logout()
+        this.props.history.push('/')
     }
 
     render() {
@@ -27,21 +27,22 @@ class App extends Component {
                     <Route exact path="/" component={Home} />
                     <Route path="/login" component={Login} />
                     <Route path="/register" component={Register} />
+                    {/*<Route component={NotFound} />*/}
                 </Switch>
+                {/*The place to import our Footer*/}
             </div>
-        );
+        )
     }
 }
 
 function mapState(state) {
-    return {};
+    return {}
 }
 
 function mapDispatch(dispatch) {
     return {
         logout: () => dispatch(logoutAction())
-    };
+    }
 }
 
-
-export default withRouter(connect(mapState, mapDispatch)(App));
+export default withRouter(connect(mapState, mapDispatch)(App))

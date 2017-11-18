@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react'
 
 export default class Input extends Component {
     render() {
-        const { name, type = 'text', value, onChange, label } = this.props;
+        const {name, type = 'text', value, onChange, label} = this.props
+
         return (
             <div>
                 <label htmlFor="new-email">{label}</label>
@@ -11,8 +12,8 @@ export default class Input extends Component {
                     name={name}
                     id={name}
                     type={type}
-                    value={value} />
+                    value={value}/>
             </div>
-        );
+        )
     }
 }

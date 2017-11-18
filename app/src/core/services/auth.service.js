@@ -1,7 +1,7 @@
-const host = 'http://localhost:5000/';
+const host = 'http://localhost:5000/'
 
 async function register(name, email, password) {
-    const res = await fetch(host + 'auth/signup', {
+    const response = await fetch(host + 'auth/signup', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -11,12 +11,13 @@ async function register(name, email, password) {
             email,
             password
         })
-    });
-    return await res.json();
+    })
+
+    return await response.json()
 }
 
 async function login(email, password) {
-    const res = await fetch(host + 'auth/login', {
+    const response = await fetch(host + 'auth/login', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -25,8 +26,9 @@ async function login(email, password) {
             email,
             password
         })
-    });
-    return await res.json();
+    })
+
+    return await response.json()
 }
 
-export { register, login };
+export {register, login}

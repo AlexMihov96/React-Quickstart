@@ -1,4 +1,4 @@
-import { registerReducer, loginReducer } from './authReducer';
+import { registerReducer, loginReducer } from './authReducer'
 
 export default {
     register: registerReducer,

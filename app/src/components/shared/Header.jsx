@@ -1,9 +1,9 @@
-import React, {Component} from 'react';
-import {NavLink} from 'react-router-dom';
+import React, {Component} from 'react'
+import {NavLink} from 'react-router-dom'
 
 export default class Header extends Component {
     render() {
-        const {loggedIn, onLogout} = this.props;
+        const {loggedIn, onLogout} = this.props
 
         return (
             <div className="container-fluid">
@@ -36,6 +36,6 @@ export default class Header extends Component {
                     </li>}
                 </ul>
             </div>
-        );
+        )
     }
 }

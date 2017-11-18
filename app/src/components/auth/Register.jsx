@@ -1,36 +1,36 @@
-import React, { Component } from 'react';
-import Input from '../shared/Input';
-import { connect } from 'react-redux';
-import { registerAction, redirect } from '../../core/store/actions/authActions';
+import React, { Component } from 'react'
+import Input from '../shared/Input'
+import { connect } from 'react-redux'
+import { registerAction, redirect } from '../../core/store/actions/authActions'
 
 class Register extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             name: '',
             email: '',
             password: '',
             repeat: ''
-        };
+        }
 
-        this.onChangeHandler = this.onChangeHandler.bind(this);
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
+        this.onChangeHandler = this.onChangeHandler.bind(this)
+        this.onSubmitHandler = this.onSubmitHandler.bind(this)
     }
 
     onChangeHandler(e) {
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     onSubmitHandler(e) {
-        e.preventDefault();
-        this.props.register(this.state.name, this.state.email, this.state.password);
+        e.preventDefault()
+        this.props.register(this.state.name, this.state.email, this.state.password)
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.registerSuccess) {
-            this.props.redirect();
-            this.props.history.push('/login');
+            this.props.redirect()
+            this.props.history.push('/login')
         }
     }
 
@@ -68,21 +68,21 @@ class Register extends Component {
                     <input type="submit" value="Register" />
                 </form>
             </div>
-        );
+        )
     }
 }
 
 function mapState(state) {
     return {
         registerSuccess: state.register.success
-    };
+    }
 }
 
 function mapDispatch(dispatch) {
     return {
         register: (name, email, password) => dispatch(registerAction(name, email, password)),
         redirect: () => dispatch(redirect())
-    };
+    }
 }
 
-export default connect(mapState, mapDispatch)(Register);
+export default connect(mapState, mapDispatch)(Register)

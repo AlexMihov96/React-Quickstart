@@ -1,34 +1,34 @@
-import React, { Component } from 'react';
-import Input from '../shared/Input';
-import { connect } from 'react-redux';
-import { loginAction, redirect } from '../../core/store/actions/authActions';
+import React, { Component } from 'react'
+import Input from '../shared/Input'
+import { connect } from 'react-redux'
+import { loginAction, redirect } from '../../core/store/actions/authActions'
 
 class Login extends Component {
     constructor(props) {
-        super(props);
+        super(props)
 
         this.state = {
             email: '',
             password: ''
-        };
+        }
 
-        this.onChangeHandler = this.onChangeHandler.bind(this);
-        this.onSubmitHandler = this.onSubmitHandler.bind(this);
+        this.onChangeHandler = this.onChangeHandler.bind(this)
+        this.onSubmitHandler = this.onSubmitHandler.bind(this)
     }
 
     onChangeHandler(e) {
-        this.setState({ [e.target.name]: e.target.value });
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     onSubmitHandler(e) {
-        e.preventDefault();
-        this.props.login(this.state.email, this.state.password);
+        e.preventDefault()
+        this.props.login(this.state.email, this.state.password)
     }
 
     componentWillReceiveProps(newProps) {
         if (newProps.loginSuccess) {
-            this.props.redirect();
-            this.props.history.push('/');
+            this.props.redirect()
+            this.props.history.push('/')
         }
     }
 
@@ -53,21 +53,21 @@ class Login extends Component {
                     <input type="submit" value="Login" />
                 </form>
             </div>
-        );
+        )
     }
 }
 
 function mapState(state) {
     return {
         loginSuccess: state.login.success
-    };
+    }
 }
 
 function mapDispatch(dispatch) {
     return {
         login: (email, password) => dispatch(loginAction(email, password)),
         redirect: () => dispatch(redirect())
-    };
+    }
 }
 
-export default connect(mapState, mapDispatch)(Login);
+export default connect(mapState, mapDispatch)(Login)
