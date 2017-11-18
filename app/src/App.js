@@ -9,7 +9,7 @@ class App extends Component {
                     <h1 className="App-title">Welcome to React</h1>
                 </header>
                 <p className="App-intro">
-                    Your startup is working perfecly
+                    Your startup is working perfectly
                 </p>
             </div>
         );
