@@ -1,7 +1,7 @@
 {
   "name": "app",
   "version": "0.1.0",
-  "private": true,
+  "description": "Initial project from where you can start building your application",
   "dependencies": {
     "react": "^16.1.1",
     "react-dom": "^16.1.1",
@@ -20,5 +20,16 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "repository": {
+	"type": "git",
+	"url": "git://github.com/AlexMihov96/React-Quickstart.git"
+	},
+  "author": "Alex Mihov",
+  "licenses": [
+  {
+    "type": "MIT",
+    "url": "https://github.com/AlexMihov96/React-Quickstart/blob/master/LICENSE"
   }
+],
 }
