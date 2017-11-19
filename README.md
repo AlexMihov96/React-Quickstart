@@ -1,3 +1,12 @@
+This is initial project from where you can start building a react application.
+I've implemented a Routing, Login, Register, some common components like header, footer and redux with it's actions, thunks and reducers
+
+ - [Used] 
+   - [ReactRedux](https://github.com/reactjs/react-redux)
+   - [Redux-Thunk](https://github.com/gaearon/redux-thunk)
+   
+   
+
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
