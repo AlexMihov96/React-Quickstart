@@ -5,6 +5,9 @@ I've implemented a Routing, Login, Register, some common components like header,
    - [ReactRedux](https://github.com/reactjs/react-redux)
    - [Redux-Thunk](https://github.com/gaearon/redux-thunk)
    
+                                            How to install:
+                                        npm i react-startup-app -g
+   
    
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
